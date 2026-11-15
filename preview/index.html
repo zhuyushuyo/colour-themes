@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colour themes</title>
+<style>
+/* Made by tools/build.py from themes/tokens.json. Do not edit by hand. */
+
+/* 月明かり Tsukiakari (Moonlight) */
+:root, [data-theme="tsukiakari"] {
+  --ct-bg: #0E1424;
+  --ct-side: #0A1020;
+  --ct-surf: #141C30;
+  --ct-surf2: #18223A;
+  --ct-line: #243050;
+  --ct-line-strong: #33416A;
+  --ct-text: #E8ECF5;
+  --ct-text2: #A3AEC8;
+  --ct-text3: #8792AE;
+  --ct-accent: #E6C27A;
+  --ct-btn: #E6C27A;
+  --ct-btn-ink: #1A1405;
+  --ct-track: #243050;
+  --ct-good: #79C7A1;
+  --ct-app: #9DB0E8;
+  --ct-script: #C9A6E0;
+  --ct-accent-soft: rgba(230,194,122,0.14);
+  --ct-nav-on: rgba(230,194,122,0.12);
+}
+
+/* 墨と朱 Sumi (Ink and vermilion) */
+[data-theme="sumi"] {
+  --ct-bg: #161514;
+  --ct-side: #100F0E;
+  --ct-surf: #1E1D1B;
+  --ct-surf2: #262422;
+  --ct-line: #363330;
+  --ct-line-strong: #4D4944;
+  --ct-text: #F0EEE9;
+  --ct-text2: #B8B4AC;
+  --ct-text3: #99958D;
+  --ct-accent: #F27D5B;
+  --ct-btn: #F27D5B;
+  --ct-btn-ink: #1C0802;
+  --ct-track: #363330;
+  --ct-good: #8ACBA4;
+  --ct-app: #9DB3E8;
+  --ct-script: #C9A9E0;
+  --ct-accent-soft: rgba(242,125,91,0.14);
+  --ct-nav-on: rgba(242,125,91,0.12);
+}
+
+/* 海 Umi (Deep sea) */
+[data-theme="umi"] {
+  --ct-bg: #0B1517;
+  --ct-side: #081012;
+  --ct-surf: #121F22;
+  --ct-surf2: #17272B;
+  --ct-line: #24393E;
+  --ct-line-strong: #36535A;
+  --ct-text: #E6F1F1;
+  --ct-text2: #A6BBBD;
+  --ct-text3: #879EA1;
+  --ct-accent: #6FD8CC;
+  --ct-btn: #6FD8CC;
+  --ct-btn-ink: #062320;
+  --ct-track: #24393E;
+  --ct-good: #A9D979;
+  --ct-app: #9DB6EE;
+  --ct-script: #D0A9E6;
+  --ct-accent-soft: rgba(111,216,204,0.14);
+  --ct-nav-on: rgba(111,216,204,0.12);
+}
+
+/* 竹林 Chikurin (Bamboo grove) */
+[data-theme="chikurin"] {
+  --ct-bg: #0F1613;
+  --ct-side: #0B110F;
+  --ct-surf: #16201C;
+  --ct-surf2: #1B2822;
+  --ct-line: #2A3A32;
+  --ct-line-strong: #3E5448;
+  --ct-text: #E8F0EA;
+  --ct-text2: #AABAAF;
+  --ct-text3: #8B9C91;
+  --ct-accent: #B4D97C;
+  --ct-btn: #B4D97C;
+  --ct-btn-ink: #14210A;
+  --ct-track: #2A3A32;
+  --ct-good: #6FCFC0;
+  --ct-app: #9DBAE8;
+  --ct-script: #CFA9E3;
+  --ct-accent-soft: rgba(180,217,124,0.14);
+  --ct-nav-on: rgba(180,217,124,0.12);
+}
+
+/* 夜桜 Yozakura (Cherry blossom at night) */
+[data-theme="yozakura"] {
+  --ct-bg: #17121A;
+  --ct-side: #120E15;
+  --ct-surf: #201925;
+  --ct-surf2: #271F2D;
+  --ct-line: #3A2E42;
+  --ct-line-strong: #54445E;
+  --ct-text: #F3EBF1;
+  --ct-text2: #C0B1BF;
+  --ct-text3: #A493A3;
+  --ct-accent: #F2A9C4;
+  --ct-btn: #F2A9C4;
+  --ct-btn-ink: #2B0F1C;
+  --ct-track: #3A2E42;
+  --ct-good: #8FD3AE;
+  --ct-app: #A9B6F2;
+  --ct-script: #D9B4F2;
+  --ct-accent-soft: rgba(242,169,196,0.14);
+  --ct-nav-on: rgba(242,169,196,0.12);
+}
+
+/* 藤 Fuji (Wisteria) */
+[data-theme="fuji"] {
+  --ct-bg: #12111B;
+  --ct-side: #0D0C15;
+  --ct-surf: #1A1927;
+  --ct-surf2: #201F30;
+  --ct-line: #2E2C45;
+  --ct-line-strong: #444166;
+  --ct-text: #ECEAF6;
+  --ct-text2: #B1AECB;
+  --ct-text3: #9390B0;
+  --ct-accent: #BBAAF7;
+  --ct-btn: #BBAAF7;
+  --ct-btn-ink: #170F33;
+  --ct-track: #2E2C45;
+  --ct-good: #84CFAE;
+  --ct-app: #9FC0F0;
+  --ct-script: #E3A9D6;
+  --ct-accent-soft: rgba(187,170,247,0.14);
+  --ct-nav-on: rgba(187,170,247,0.12);
+}
+
+body { margin: 0; padding: 24px; background: #101114; color: #E9EAEE;
+  font-family: 'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', system-ui, sans-serif; }
+h1 { font-size: 22px; margin: 0 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(560px, 1fr)); gap: 20px; }
+.card { display: flex; min-height: 380px; border-radius: 14px; overflow: hidden; font-size: 13px;
+  line-height: 1.5; background: var(--ct-bg); color: var(--ct-text); border: 1px solid var(--ct-line); }
+aside { width: 150px; flex: none; background: var(--ct-side); border-right: 1px solid var(--ct-line);
+  padding: 16px 12px; display: flex; flex-direction: column; gap: 3px; }
+.brand { display: flex; flex-direction: column; padding: 0 8px 12px; }
+.brand small { color: var(--ct-text3); font-size: 10.5px; }
+.nav { padding: 5px 10px; border-radius: 7px; color: var(--ct-text2); }
+.nav.on { background: var(--ct-nav-on); color: var(--ct-text); font-weight: 600; }
+main { flex: 1; min-width: 0; padding: 18px 20px; display: flex; flex-direction: column; gap: 11px; }
+h2 { margin: 0; font-size: 20px; }
+h2 em { font-style: normal; font-size: 13px; color: var(--ct-accent); font-weight: 600; }
+.about { margin: 0; color: var(--ct-text2); font-size: 11.5px; }
+.you, .claude { border: 1px solid var(--ct-line); border-radius: 11px; padding: 10px 13px; }
+.you { background: var(--ct-surf2); }
+.claude { background: var(--ct-surf); }
+.you small, .claude small { display: block; color: var(--ct-text3); font-weight: 600; font-size: 10.5px; }
+.card a { color: var(--ct-accent); }
+.row { display: flex; gap: 10px; }
+.field { flex: 1; display: flex; align-items: center; min-height: 44px; padding: 0 12px;
+  border: 1px solid var(--ct-line-strong); border-radius: 10px; background: var(--ct-surf);
+  color: var(--ct-text3); font-size: 12px; }
+button { min-width: 84px; min-height: 44px; border: 0; border-radius: 10px; background: var(--ct-btn);
+  color: var(--ct-btn-ink); font: inherit; font-weight: 700; }
+.chips { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 10.5px;
+  color: var(--ct-text3); }
+.chip i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px;
+  vertical-align: -2px; border: 1px solid var(--ct-line-strong); }
+</style>
+</head>
+<body>
+<h1>Colour themes</h1>
+<div class="grid">
+<section class="card" data-theme="tsukiakari"><aside><div class="brand"><b>月明かり</b><small>Tsukiakari</small></div><div class="nav">ホーム</div><div class="nav on">チャット</div><div class="nav">タスク</div><div class="nav">ビルド</div><div class="nav">使用量</div><div class="nav">設定</div></aside><main><h2>月明かり <em>Tsukiakari</em></h2><p class="about">Moonlight. Navy and pale gold. 月曜 (Monday).</p><div class="you"><small>あなた</small>来週の勉強会の案内文を、3行くらいで下書きしてください。</div><div class="claude"><small>Claude</small>下書きです。日時は11月20日（金）15:00〜16:00です。 <a href="#">全文を見る</a></div><div class="row"><span class="field">メッセージを入力</span><button type="button">送信</button></div><div class="chips"><span class="chip"><i style="background:#0E1424"></i>bg #0E1424</span><span class="chip"><i style="background:#18223A"></i>surf2 #18223A</span><span class="chip"><i style="background:#243050"></i>line #243050</span><span class="chip"><i style="background:#E8ECF5"></i>text #E8ECF5</span><span class="chip"><i style="background:#E6C27A"></i>accent #E6C27A</span><span class="chip"><i style="background:#79C7A1"></i>good #79C7A1</span></div></main></section>
+<section class="card" data-theme="sumi"><aside><div class="brand"><b>月明かり</b><small>Tsukiakari</small></div><div class="nav">ホーム</div><div class="nav on">チャット</div><div class="nav">タスク</div><div class="nav">ビルド</div><div class="nav">使用量</div><div class="nav">設定</div></aside><main><h2>墨と朱 <em>Sumi</em></h2><p class="about">Ink and vermilion. Warm charcoal and seal red. 火曜 (Tuesday).</p><div class="you"><small>あなた</small>来週の勉強会の案内文を、3行くらいで下書きしてください。</div><div class="claude"><small>Claude</small>下書きです。日時は11月20日（金）15:00〜16:00です。 <a href="#">全文を見る</a></div><div class="row"><span class="field">メッセージを入力</span><button type="button">送信</button></div><div class="chips"><span class="chip"><i style="background:#161514"></i>bg #161514</span><span class="chip"><i style="background:#262422"></i>surf2 #262422</span><span class="chip"><i style="background:#363330"></i>line #363330</span><span class="chip"><i style="background:#F0EEE9"></i>text #F0EEE9</span><span class="chip"><i style="background:#F27D5B"></i>accent #F27D5B</span><span class="chip"><i style="background:#8ACBA4"></i>good #8ACBA4</span></div></main></section>
+<section class="card" data-theme="umi"><aside><div class="brand"><b>月明かり</b><small>Tsukiakari</small></div><div class="nav">ホーム</div><div class="nav on">チャット</div><div class="nav">タスク</div><div class="nav">ビルド</div><div class="nav">使用量</div><div class="nav">設定</div></aside><main><h2>海 <em>Umi</em></h2><p class="about">Deep sea. Blue-green black and clear aqua. 水曜 (Wednesday).</p><div class="you"><small>あなた</small>来週の勉強会の案内文を、3行くらいで下書きしてください。</div><div class="claude"><small>Claude</small>下書きです。日時は11月20日（金）15:00〜16:00です。 <a href="#">全文を見る</a></div><div class="row"><span class="field">メッセージを入力</span><button type="button">送信</button></div><div class="chips"><span class="chip"><i style="background:#0B1517"></i>bg #0B1517</span><span class="chip"><i style="background:#17272B"></i>surf2 #17272B</span><span class="chip"><i style="background:#24393E"></i>line #24393E</span><span class="chip"><i style="background:#E6F1F1"></i>text #E6F1F1</span><span class="chip"><i style="background:#6FD8CC"></i>accent #6FD8CC</span><span class="chip"><i style="background:#A9D979"></i>good #A9D979</span></div></main></section>
+<section class="card" data-theme="chikurin"><aside><div class="brand"><b>月明かり</b><small>Tsukiakari</small></div><div class="nav">ホーム</div><div class="nav on">チャット</div><div class="nav">タスク</div><div class="nav">ビルド</div><div class="nav">使用量</div><div class="nav">設定</div></aside><main><h2>竹林 <em>Chikurin</em></h2><p class="about">Bamboo grove. Forest black and young bamboo green. 木曜 (Thursday).</p><div class="you"><small>あなた</small>来週の勉強会の案内文を、3行くらいで下書きしてください。</div><div class="claude"><small>Claude</small>下書きです。日時は11月20日（金）15:00〜16:00です。 <a href="#">全文を見る</a></div><div class="row"><span class="field">メッセージを入力</span><button type="button">送信</button></div><div class="chips"><span class="chip"><i style="background:#0F1613"></i>bg #0F1613</span><span class="chip"><i style="background:#1B2822"></i>surf2 #1B2822</span><span class="chip"><i style="background:#2A3A32"></i>line #2A3A32</span><span class="chip"><i style="background:#E8F0EA"></i>text #E8F0EA</span><span class="chip"><i style="background:#B4D97C"></i>accent #B4D97C</span><span class="chip"><i style="background:#6FCFC0"></i>good #6FCFC0</span></div></main></section>
+<section class="card" data-theme="yozakura"><aside><div class="brand"><b>月明かり</b><small>Tsukiakari</small></div><div class="nav">ホーム</div><div class="nav on">チャット</div><div class="nav">タスク</div><div class="nav">ビルド</div><div class="nav">使用量</div><div class="nav">設定</div></aside><main><h2>夜桜 <em>Yozakura</em></h2><p class="about">Cherry blossom at night. Plum black and sakura pink. 金曜 (Friday).</p><div class="you"><small>あなた</small>来週の勉強会の案内文を、3行くらいで下書きしてください。</div><div class="claude"><small>Claude</small>下書きです。日時は11月20日（金）15:00〜16:00です。 <a href="#">全文を見る</a></div><div class="row"><span class="field">メッセージを入力</span><button type="button">送信</button></div><div class="chips"><span class="chip"><i style="background:#17121A"></i>bg #17121A</span><span class="chip"><i style="background:#271F2D"></i>surf2 #271F2D</span><span class="chip"><i style="background:#3A2E42"></i>line #3A2E42</span><span class="chip"><i style="background:#F3EBF1"></i>text #F3EBF1</span><span class="chip"><i style="background:#F2A9C4"></i>accent #F2A9C4</span><span class="chip"><i style="background:#8FD3AE"></i>good #8FD3AE</span></div></main></section>
+<section class="card" data-theme="fuji"><aside><div class="brand"><b>月明かり</b><small>Tsukiakari</small></div><div class="nav">ホーム</div><div class="nav on">チャット</div><div class="nav">タスク</div><div class="nav">ビルド</div><div class="nav">使用量</div><div class="nav">設定</div></aside><main><h2>藤 <em>Fuji</em></h2><p class="about">Wisteria. Violet black and soft wisteria purple. 土曜 (Saturday).</p><div class="you"><small>あなた</small>来週の勉強会の案内文を、3行くらいで下書きしてください。</div><div class="claude"><small>Claude</small>下書きです。日時は11月20日（金）15:00〜16:00です。 <a href="#">全文を見る</a></div><div class="row"><span class="field">メッセージを入力</span><button type="button">送信</button></div><div class="chips"><span class="chip"><i style="background:#12111B"></i>bg #12111B</span><span class="chip"><i style="background:#201F30"></i>surf2 #201F30</span><span class="chip"><i style="background:#2E2C45"></i>line #2E2C45</span><span class="chip"><i style="background:#ECEAF6"></i>text #ECEAF6</span><span class="chip"><i style="background:#BBAAF7"></i>accent #BBAAF7</span><span class="chip"><i style="background:#84CFAE"></i>good #84CFAE</span></div></main></section>
+</div>
+</body>
+</html>

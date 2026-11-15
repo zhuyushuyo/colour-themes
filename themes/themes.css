@@ -1,0 +1,133 @@
+/* Made by tools/build.py from themes/tokens.json. Do not edit by hand. */
+
+/* 月明かり Tsukiakari (Moonlight) */
+:root, [data-theme="tsukiakari"] {
+  --ct-bg: #0E1424;
+  --ct-side: #0A1020;
+  --ct-surf: #141C30;
+  --ct-surf2: #18223A;
+  --ct-line: #243050;
+  --ct-line-strong: #33416A;
+  --ct-text: #E8ECF5;
+  --ct-text2: #A3AEC8;
+  --ct-text3: #8792AE;
+  --ct-accent: #E6C27A;
+  --ct-btn: #E6C27A;
+  --ct-btn-ink: #1A1405;
+  --ct-track: #243050;
+  --ct-good: #79C7A1;
+  --ct-app: #9DB0E8;
+  --ct-script: #C9A6E0;
+  --ct-accent-soft: rgba(230,194,122,0.14);
+  --ct-nav-on: rgba(230,194,122,0.12);
+}
+
+/* 墨と朱 Sumi (Ink and vermilion) */
+[data-theme="sumi"] {
+  --ct-bg: #161514;
+  --ct-side: #100F0E;
+  --ct-surf: #1E1D1B;
+  --ct-surf2: #262422;
+  --ct-line: #363330;
+  --ct-line-strong: #4D4944;
+  --ct-text: #F0EEE9;
+  --ct-text2: #B8B4AC;
+  --ct-text3: #99958D;
+  --ct-accent: #F27D5B;
+  --ct-btn: #F27D5B;
+  --ct-btn-ink: #1C0802;
+  --ct-track: #363330;
+  --ct-good: #8ACBA4;
+  --ct-app: #9DB3E8;
+  --ct-script: #C9A9E0;
+  --ct-accent-soft: rgba(242,125,91,0.14);
+  --ct-nav-on: rgba(242,125,91,0.12);
+}
+
+/* 海 Umi (Deep sea) */
+[data-theme="umi"] {
+  --ct-bg: #0B1517;
+  --ct-side: #081012;
+  --ct-surf: #121F22;
+  --ct-surf2: #17272B;
+  --ct-line: #24393E;
+  --ct-line-strong: #36535A;
+  --ct-text: #E6F1F1;
+  --ct-text2: #A6BBBD;
+  --ct-text3: #879EA1;
+  --ct-accent: #6FD8CC;
+  --ct-btn: #6FD8CC;
+  --ct-btn-ink: #062320;
+  --ct-track: #24393E;
+  --ct-good: #A9D979;
+  --ct-app: #9DB6EE;
+  --ct-script: #D0A9E6;
+  --ct-accent-soft: rgba(111,216,204,0.14);
+  --ct-nav-on: rgba(111,216,204,0.12);
+}
+
+/* 竹林 Chikurin (Bamboo grove) */
+[data-theme="chikurin"] {
+  --ct-bg: #0F1613;
+  --ct-side: #0B110F;
+  --ct-surf: #16201C;
+  --ct-surf2: #1B2822;
+  --ct-line: #2A3A32;
+  --ct-line-strong: #3E5448;
+  --ct-text: #E8F0EA;
+  --ct-text2: #AABAAF;
+  --ct-text3: #8B9C91;
+  --ct-accent: #B4D97C;
+  --ct-btn: #B4D97C;
+  --ct-btn-ink: #14210A;
+  --ct-track: #2A3A32;
+  --ct-good: #6FCFC0;
+  --ct-app: #9DBAE8;
+  --ct-script: #CFA9E3;
+  --ct-accent-soft: rgba(180,217,124,0.14);
+  --ct-nav-on: rgba(180,217,124,0.12);
+}
+
+/* 夜桜 Yozakura (Cherry blossom at night) */
+[data-theme="yozakura"] {
+  --ct-bg: #17121A;
+  --ct-side: #120E15;
+  --ct-surf: #201925;
+  --ct-surf2: #271F2D;
+  --ct-line: #3A2E42;
+  --ct-line-strong: #54445E;
+  --ct-text: #F3EBF1;
+  --ct-text2: #C0B1BF;
+  --ct-text3: #A493A3;
+  --ct-accent: #F2A9C4;
+  --ct-btn: #F2A9C4;
+  --ct-btn-ink: #2B0F1C;
+  --ct-track: #3A2E42;
+  --ct-good: #8FD3AE;
+  --ct-app: #A9B6F2;
+  --ct-script: #D9B4F2;
+  --ct-accent-soft: rgba(242,169,196,0.14);
+  --ct-nav-on: rgba(242,169,196,0.12);
+}
+
+/* 藤 Fuji (Wisteria) */
+[data-theme="fuji"] {
+  --ct-bg: #12111B;
+  --ct-side: #0D0C15;
+  --ct-surf: #1A1927;
+  --ct-surf2: #201F30;
+  --ct-line: #2E2C45;
+  --ct-line-strong: #444166;
+  --ct-text: #ECEAF6;
+  --ct-text2: #B1AECB;
+  --ct-text3: #9390B0;
+  --ct-accent: #BBAAF7;
+  --ct-btn: #BBAAF7;
+  --ct-btn-ink: #170F33;
+  --ct-track: #2E2C45;
+  --ct-good: #84CFAE;
+  --ct-app: #9FC0F0;
+  --ct-script: #E3A9D6;
+  --ct-accent-soft: rgba(187,170,247,0.14);
+  --ct-nav-on: rgba(187,170,247,0.12);
+}

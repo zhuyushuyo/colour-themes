@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Tsukiakari">
+<title>Tsukiakari</title>
+<rect width="256" height="256" rx="58" fill="#0E1424"/>
+<mask id="moon" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256"><rect width="256" height="256" fill="#000"/><circle cx="124" cy="96" r="58" fill="#fff"/><circle cx="152" cy="78" r="50" fill="#000"/></mask>
+<rect width="256" height="256" fill="#E6C27A" mask="url(#moon)"/>
+<rect x="60" y="176" width="136" height="12" rx="6" fill="#E6C27A"/>
+<rect x="82" y="200" width="92" height="12" rx="6" fill="#E6C27A" opacity="0.7"/>
+<rect x="104" y="224" width="48" height="12" rx="6" fill="#E6C27A" opacity="0.45"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Tsukiakari concept b-moon-bubble">
+<title>Tsukiakari concept b-moon-bubble</title>
+<rect width="256" height="256" rx="58" fill="#0E1424"/>
+<path d="M76 52h104a40 40 0 0 1 40 40v64a40 40 0 0 1-40 40h-62l-44 34a6 6 0 0 1-9.6-5.4L68 195a40 40 0 0 1-32-39V92a40 40 0 0 1 40-40z" fill="#E6C27A"/>
+<mask id="moon" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256"><rect width="256" height="256" fill="#000"/><circle cx="124" cy="124" r="42" fill="#fff"/><circle cx="144" cy="110" r="36" fill="#000"/></mask>
+<rect width="256" height="256" fill="#0E1424" mask="url(#moon)"/>
+</svg>

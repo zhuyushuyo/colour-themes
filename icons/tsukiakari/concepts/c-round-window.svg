@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Tsukiakari concept c-round-window">
+<title>Tsukiakari concept c-round-window</title>
+<rect width="256" height="256" rx="58" fill="#0E1424"/>
+<circle cx="128" cy="128" r="82" fill="none" stroke="#E6C27A" stroke-width="14"/>
+<circle cx="154" cy="100" r="24" fill="#E6C27A"/>
+<path d="M54 160h148" stroke="#E6C27A" stroke-width="12" stroke-linecap="round"/>
+<path d="M88 184h80" stroke="#E6C27A" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+</svg>
