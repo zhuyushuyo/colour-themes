@@ -4,9 +4,10 @@
     python tools/build.py
 
 Reads themes/tokens.json (the one source of truth), checks text contrast, and
-writes themes/themes.css, preview/themes.svg, preview/index.html and the icon
-SVGs. It needs only Python's standard library. It stops with an error, and
-writes nothing, when a theme fails the contrast check.
+writes themes/themes.css, preview/themes.svg, preview/themes-light.svg,
+preview/index.html and the icon SVGs. It needs only Python's standard library.
+It stops with an error, and writes nothing, when a theme fails the contrast
+check in either mode (dark or light).
 """
 
 from __future__ import annotations
@@ -25,6 +26,14 @@ CHECKS = [
     ("text3", "side", 4.5), ("accent", "bg", 4.5), ("accent", "surf2", 4.5), ("btn_ink", "btn", 7.0),
     ("good", "side", 4.5),
 ]
+# Light palettes are also used on paper-white slides and cards, so more is checked there.
+LIGHT_CHECKS = CHECKS + [
+    ("text2", "side", 4.5), ("accent", "side", 4.5), ("accent", "surf", 4.5),
+    ("good", "bg", 4.5), ("app", "bg", 4.5), ("app", "side", 4.5),
+    ("script", "bg", 4.5), ("script", "side", 4.5),
+]
+MODES = ("dark", "light")
+MODE_CHECKS = {"dark": CHECKS, "light": LIGHT_CHECKS}
 SOLID = ("bg", "side", "surf", "surf2", "line", "line_strong", "text", "text2", "text3", "accent",
          "btn", "btn_ink", "track", "good", "app", "script")
 WEEKDAY_JA = {"mon": "月", "tue": "火", "wed": "水", "thu": "木", "fri": "金", "sat": "土"}
@@ -50,35 +59,57 @@ def contrast(a: str, b: str) -> float:
 def check(themes: list[dict]) -> list[str]:
     problems = []
     for theme in themes:
-        palette = theme["dark"]
-        for key in SOLID:
-            value = palette.get(key, "")
-            if not (isinstance(value, str) and len(value) == 7 and value.startswith("#")):
-                problems.append("{}: {} must be a #RRGGBB colour".format(theme["id"], key))
-        if problems:
-            continue
-        for fg, bg, least in CHECKS:
-            ratio = contrast(palette[fg], palette[bg])
-            if ratio < least:
-                problems.append("{}: {} on {} is {:.1f}:1, needs {}:1".format(
-                    theme["id"], fg, bg, ratio, least))
+        for mode in MODES:
+            name = "{} ({})".format(theme["id"], mode)
+            palette = theme.get(mode)
+            if not isinstance(palette, dict):
+                problems.append("{}: the palette is missing".format(name))
+                continue
+            bad = False
+            for key in SOLID:
+                value = palette.get(key, "")
+                if not (isinstance(value, str) and len(value) == 7 and value.startswith("#")):
+                    problems.append("{}: {} must be a #RRGGBB colour".format(name, key))
+                    bad = True
+            for key in ("accent_soft", "nav_on"):
+                if not str(palette.get(key, "")).startswith("rgba("):
+                    problems.append("{}: {} must be an rgba() colour".format(name, key))
+            if bad:
+                continue
+            for fg, bg, least in MODE_CHECKS[mode]:
+                ratio = contrast(palette[fg], palette[bg])
+                if ratio < least:
+                    problems.append("{}: {} on {} is {:.1f}:1, needs {}:1".format(
+                        name, fg, bg, ratio, least))
+            darker = luminance(palette["bg"]) < luminance(palette["text"])
+            if darker != (mode == "dark"):
+                problems.append("{}: the background and the text are the wrong way round".format(name))
     return problems
 
 
 # ------------------------------------------------------------------ CSS
 
 def write_css(themes: list[dict]) -> None:
-    lines = ["/* Made by tools/build.py from themes/tokens.json. Do not edit by hand. */", ""]
-    for index, theme in enumerate(themes):
-        selector = '[data-theme="{}"]'.format(theme["id"])
-        if index == 0:
-            selector = ":root, " + selector
-        lines.append("/* {} {} ({}) */".format(theme["ja"], theme["reading"], theme["meaning"]))
-        lines.append(selector + " {")
-        for key, value in theme["dark"].items():
-            lines.append("  --ct-{}: {};".format(key.replace("_", "-"), value))
-        lines.append("}")
-        lines.append("")
+    lines = [
+        "/* Made by tools/build.py from themes/tokens.json. Do not edit by hand. */",
+        "/* Dark is the default. Add data-mode=\"light\" to the same element for the light palette. */",
+        "",
+    ]
+    for mode in MODES:
+        for index, theme in enumerate(themes):
+            selector = '[data-theme="{}"]'.format(theme["id"])
+            if mode == "light":
+                selector += '[data-mode="light"]'
+            if index == 0:
+                first = ':root[data-mode="light"]' if mode == "light" else ":root"
+                selector = first + ", " + selector
+            lines.append("/* {} {} ({}), {} */".format(
+                theme["ja"], theme["reading"], theme["meaning"], mode))
+            lines.append(selector + " {")
+            for key, value in theme[mode].items():
+                lines.append("  --ct-{}: {};".format(key.replace("_", "-"), value))
+            lines.append("}")
+            lines.append("")
     (ROOT / "themes" / "themes.css").write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -157,22 +188,23 @@ def write_icons(themes: list[dict]) -> None:
 
 # ------------------------------------------------------------------ previews
 
-def write_swatch_sheet(themes: list[dict]) -> None:
-    """One SVG that GitHub shows in the README: a row per theme."""
+def write_swatch_sheet(themes: list[dict], mode: str = "dark") -> None:
+    """One SVG that GitHub shows in the README: a row per theme, for one mode."""
     row_h, width = 132, 980
     height = 24 + row_h * len(themes)
     parts = [
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" '
-        'role="img" aria-label="The six dark colour themes" '
+        'role="img" aria-label="The six {mode} colour themes" '
         'font-family="\'Hiragino Sans\', \'Yu Gothic UI\', \'Noto Sans JP\', system-ui, sans-serif">'
-        .format(w=width, h=height),
-        '<rect width="{w}" height="{h}" fill="#101114"/>'.format(w=width, h=height),
+        .format(w=width, h=height, mode=mode),
+        '<rect width="{w}" height="{h}" fill="{c}"/>'.format(
+            w=width, h=height, c="#101114" if mode == "dark" else "#E4E4E6"),
     ]
     shown = (("bg", "bg"), ("surf", "surf"), ("surf2", "surf2"), ("line", "line"),
              ("text", "text"), ("text2", "text2"), ("accent", "accent"), ("good", "good"),
              ("app", "app"), ("script", "script"))
     for index, theme in enumerate(themes):
-        p = theme["dark"]
+        p = theme[mode]
         y = 12 + index * row_h
         parts.append('<g transform="translate(12 {y})">'.format(y=y))
         parts.append('<rect width="{w}" height="{h}" rx="14" fill="{bg}" stroke="{line}"/>'.format(
@@ -194,14 +226,15 @@ def write_swatch_sheet(themes: list[dict]) -> None:
                 x=x, c=p["text3"], t=p[key]))
         parts.append("</g>")
     parts.append("</svg>")
-    (ROOT / "preview" / "themes.svg").write_text("\n".join(parts) + "\n", encoding="utf-8")
+    name = "themes.svg" if mode == "dark" else "themes-{}.svg".format(mode)
+    (ROOT / "preview" / name).write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
 def write_preview_page(themes: list[dict]) -> None:
-    """A page to open in a browser: every theme on a small app window."""
+    """A page to open in a browser: every theme on a small app window, dark then light."""
     cards = []
-    for theme in themes:
-        p = theme["dark"]
+    for mode, theme in [(m, t) for t in themes for m in MODES]:
+        p = theme[mode]
         nav = "".join(
             '<div class="nav{on}">{name}</div>'.format(on=" on" if name == "チャット" else "", name=name)
             for name in ("ホーム", "チャット", "タスク", "ビルド", "使用量", "設定"))
@@ -209,17 +242,19 @@ def write_preview_page(themes: list[dict]) -> None:
             '<span class="chip"><i style="background:{c}"></i>{k} {c}</span>'.format(k=key, c=p[key])
             for key in ("bg", "surf2", "line", "text", "accent", "good"))
         cards.append(
-            '<section class="card" data-theme="{id}">'
+            '<section class="card" data-theme="{id}" data-mode="{mode}">'
             '<aside><div class="brand"><b>月明かり</b><small>Tsukiakari</small></div>{nav}</aside>'
-            '<main><h2>{ja} <em>{reading}</em></h2>'
+            '<main><h2>{ja} <em>{reading} · {mode}</em></h2>'
             '<p class="about">{meaning}. {description} {day}曜 ({day_en}).</p>'
             '<div class="you"><small>あなた</small>来週の勉強会の案内文を、3行くらいで下書きしてください。</div>'
             '<div class="claude"><small>Claude</small>下書きです。日時は11月20日（金）15:00〜16:00です。 '
             '<a href="#">全文を見る</a></div>'
             '<div class="row"><span class="field">メッセージを入力</span><button type="button">送信</button></div>'
             '<div class="chips">{chips}</div></main></section>'.format(
-                id=theme["id"], nav=nav, ja=html.escape(theme["ja"]), reading=theme["reading"],
-                meaning=html.escape(theme["meaning"]), description=html.escape(theme["description"]),
+                id=theme["id"], mode=mode, nav=nav, ja=html.escape(theme["ja"]),
+                reading=theme["reading"], meaning=html.escape(theme["meaning"]),
+                description=html.escape(
+                    theme["description"] if mode == "dark" else theme["light_description"]),
                 day=WEEKDAY_JA[theme["weekday"]], day_en=WEEKDAY_EN[theme["weekday"]], chips=chips))
     css = (ROOT / "themes" / "themes.css").read_text(encoding="utf-8")
     page = """<!doctype html>
@@ -289,9 +324,10 @@ def main() -> int:
         return 1
     write_css(themes)
     write_icons(themes)
-    write_swatch_sheet(themes)
+    for mode in MODES:
+        write_swatch_sheet(themes, mode)
     write_preview_page(themes)
-    print("{} themes pass the contrast check. Files written.".format(len(themes)))
+    print("{} themes pass the contrast check in dark and light. Files written.".format(len(themes)))
     return 0
 
 

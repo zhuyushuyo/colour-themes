@@ -2,6 +2,7 @@
 
     import colour_themes
     palette = colour_themes.palette("yozakura")          # {"bg": "#17121A", ...}
+    paper = colour_themes.palette("yozakura", mode="light")
     today = colour_themes.theme_for_date(date.today())    # "umi" on a Wednesday
 
 Copy this file and themes/tokens.json into a project, or read tokens.json directly.
@@ -14,6 +15,7 @@ from datetime import date
 from pathlib import Path
 
 TOKENS = Path(__file__).resolve().parent / "themes" / "tokens.json"
+MODES = ("dark", "light")
 _DAYS = ("mon", "tue", "wed", "thu", "fri", "sat", "sun")
 
 
@@ -27,16 +29,18 @@ def theme_ids(path: Path | str | None = None) -> list[str]:
 
 
 def theme(theme_id: str, path: Path | str | None = None) -> dict:
-    """One theme: its names, its weekday and its dark palette."""
+    """One theme: its names, its weekday and its dark and light palettes."""
     for item in load(path)["themes"]:
         if item["id"] == theme_id:
             return item
     raise KeyError("No colour theme named {!r}".format(theme_id))
 
 
-def palette(theme_id: str, path: Path | str | None = None) -> dict:
-    """The dark palette of one theme, role name to colour."""
-    return dict(theme(theme_id, path)["dark"])
+def palette(theme_id: str, path: Path | str | None = None, mode: str = "dark") -> dict:
+    """One palette of a theme, role name to colour. `mode` is "dark" or "light"."""
+    if mode not in MODES:
+        raise ValueError("mode must be 'dark' or 'light', not {!r}".format(mode))
+    return dict(theme(theme_id, path)[mode])
 
 
 def theme_for_date(day: date, base: str = "tsukiakari", path: Path | str | None = None) -> str:
