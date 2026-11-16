@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 816" width="980" height="816" role="img" aria-label="The six light colour themes" font-family="'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', system-ui, sans-serif">
+<rect width="980" height="816" fill="#E4E4E6"/>
+<g transform="translate(12 12)">
+<rect width="956" height="120" rx="14" fill="#F6F5F1" stroke="#E3E0D8"/>
+<text x="22" y="42" font-size="24" font-weight="700" fill="#1A2238">月明かり</text>
+<text x="22" y="68" font-size="14" font-weight="600" fill="#8C6000">Tsukiakari</text>
+<text x="22" y="92" font-size="12" fill="#4D566E">Moonlight · 月曜 Monday</text>
+<rect x="250" y="22" width="58" height="40" rx="8" fill="#F6F5F1" stroke="#CFCBC0"/>
+<text x="250" y="80" font-size="11" fill="#4D566E">bg</text>
+<text x="250" y="96" font-size="10.5" fill="#5F6880">#F6F5F1</text>
+<rect x="320" y="22" width="58" height="40" rx="8" fill="#FFFFFF" stroke="#CFCBC0"/>
+<text x="320" y="80" font-size="11" fill="#4D566E">surf</text>
+<text x="320" y="96" font-size="10.5" fill="#5F6880">#FFFFFF</text>
+<rect x="390" y="22" width="58" height="40" rx="8" fill="#F7F6F2" stroke="#CFCBC0"/>
+<text x="390" y="80" font-size="11" fill="#4D566E">surf2</text>
+<text x="390" y="96" font-size="10.5" fill="#5F6880">#F7F6F2</text>
+<rect x="460" y="22" width="58" height="40" rx="8" fill="#E3E0D8" stroke="#CFCBC0"/>
+<text x="460" y="80" font-size="11" fill="#4D566E">line</text>
+<text x="460" y="96" font-size="10.5" fill="#5F6880">#E3E0D8</text>
+<rect x="530" y="22" width="58" height="40" rx="8" fill="#1A2238" stroke="#CFCBC0"/>
+<text x="530" y="80" font-size="11" fill="#4D566E">text</text>
+<text x="530" y="96" font-size="10.5" fill="#5F6880">#1A2238</text>
+<rect x="600" y="22" width="58" height="40" rx="8" fill="#4D566E" stroke="#CFCBC0"/>
+<text x="600" y="80" font-size="11" fill="#4D566E">text2</text>
+<text x="600" y="96" font-size="10.5" fill="#5F6880">#4D566E</text>
+<rect x="670" y="22" width="58" height="40" rx="8" fill="#8C6000" stroke="#CFCBC0"/>
+<text x="670" y="80" font-size="11" fill="#4D566E">accent</text>
+<text x="670" y="96" font-size="10.5" fill="#5F6880">#8C6000</text>
+<rect x="740" y="22" width="58" height="40" rx="8" fill="#217651" stroke="#CFCBC0"/>
+<text x="740" y="80" font-size="11" fill="#4D566E">good</text>
+<text x="740" y="96" font-size="10.5" fill="#5F6880">#217651</text>
+<rect x="810" y="22" width="58" height="40" rx="8" fill="#4A63B8" stroke="#CFCBC0"/>
+<text x="810" y="80" font-size="11" fill="#4D566E">app</text>
+<text x="810" y="96" font-size="10.5" fill="#5F6880">#4A63B8</text>
+<rect x="880" y="22" width="58" height="40" rx="8" fill="#7A4E9C" stroke="#CFCBC0"/>
+<text x="880" y="80" font-size="11" fill="#4D566E">script</text>
+<text x="880" y="96" font-size="10.5" fill="#5F6880">#7A4E9C</text>
+</g>
+<g transform="translate(12 144)">
+<rect width="956" height="120" rx="14" fill="#F9F3EB" stroke="#E3DBD2"/>
+<text x="22" y="42" font-size="24" font-weight="700" fill="#27221E">墨と朱</text>
+<text x="22" y="68" font-size="14" font-weight="600" fill="#BC3C1B">Sumi</text>
+<text x="22" y="92" font-size="12" fill="#514D49">Ink and vermilion · 火曜 Tuesday</text>
+<rect x="250" y="22" width="58" height="40" rx="8" fill="#F9F3EB" stroke="#D1C7BC"/>
+<text x="250" y="80" font-size="11" fill="#514D49">bg</text>
+<text x="250" y="96" font-size="10.5" fill="#67625F">#F9F3EB</text>
+<rect x="320" y="22" width="58" height="40" rx="8" fill="#FFFFFF" stroke="#D1C7BC"/>
+<text x="320" y="80" font-size="11" fill="#514D49">surf</text>
+<text x="320" y="96" font-size="10.5" fill="#67625F">#FFFFFF</text>
+<rect x="390" y="22" width="58" height="40" rx="8" fill="#FBF5EE" stroke="#D1C7BC"/>
+<text x="390" y="80" font-size="11" fill="#514D49">surf2</text>
+<text x="390" y="96" font-size="10.5" fill="#67625F">#FBF5EE</text>
+<rect x="460" y="22" width="58" height="40" rx="8" fill="#E3DBD2" stroke="#D1C7BC"/>
+<text x="460" y="80" font-size="11" fill="#514D49">line</text>
+<text x="460" y="96" font-size="10.5" fill="#67625F">#E3DBD2</text>
+<rect x="530" y="22" width="58" height="40" rx="8" fill="#27221E" stroke="#D1C7BC"/>
+<text x="530" y="80" font-size="11" fill="#514D49">text</text>
+<text x="530" y="96" font-size="10.5" fill="#67625F">#27221E</text>
+<rect x="600" y="22" width="58" height="40" rx="8" fill="#514D49" stroke="#D1C7BC"/>
+<text x="600" y="80" font-size="11" fill="#514D49">text2</text>
+<text x="600" y="96" font-size="10.5" fill="#67625F">#514D49</text>
+<rect x="670" y="22" width="58" height="40" rx="8" fill="#BC3C1B" stroke="#D1C7BC"/>
+<text x="670" y="80" font-size="11" fill="#514D49">accent</text>
+<text x="670" y="96" font-size="10.5" fill="#67625F">#BC3C1B</text>
+<rect x="740" y="22" width="58" height="40" rx="8" fill="#217651" stroke="#D1C7BC"/>
+<text x="740" y="80" font-size="11" fill="#514D49">good</text>
+<text x="740" y="96" font-size="10.5" fill="#67625F">#217651</text>
+<rect x="810" y="22" width="58" height="40" rx="8" fill="#4566B5" stroke="#D1C7BC"/>
+<text x="810" y="80" font-size="11" fill="#514D49">app</text>
+<text x="810" y="96" font-size="10.5" fill="#67625F">#4566B5</text>
+<rect x="880" y="22" width="58" height="40" rx="8" fill="#8257A0" stroke="#D1C7BC"/>
+<text x="880" y="80" font-size="11" fill="#514D49">script</text>
+<text x="880" y="96" font-size="10.5" fill="#67625F">#8257A0</text>
+</g>
+<g transform="translate(12 276)">
+<rect width="956" height="120" rx="14" fill="#EBF6F8" stroke="#D1E0E1"/>
+<text x="22" y="42" font-size="24" font-weight="700" fill="#0B272D">海</text>
+<text x="22" y="68" font-size="14" font-weight="600" fill="#007672">Umi</text>
+<text x="22" y="92" font-size="12" fill="#3A5157">Deep sea · 水曜 Wednesday</text>
+<rect x="250" y="22" width="58" height="40" rx="8" fill="#EBF6F8" stroke="#BBCDCF"/>
+<text x="250" y="80" font-size="11" fill="#3A5157">bg</text>
+<text x="250" y="96" font-size="10.5" fill="#51676D">#EBF6F8</text>
+<rect x="320" y="22" width="58" height="40" rx="8" fill="#FFFFFF" stroke="#BBCDCF"/>
+<text x="320" y="80" font-size="11" fill="#3A5157">surf</text>
+<text x="320" y="96" font-size="10.5" fill="#51676D">#FFFFFF</text>
+<rect x="390" y="22" width="58" height="40" rx="8" fill="#EEF8F9" stroke="#BBCDCF"/>
+<text x="390" y="80" font-size="11" fill="#3A5157">surf2</text>
+<text x="390" y="96" font-size="10.5" fill="#51676D">#EEF8F9</text>
+<rect x="460" y="22" width="58" height="40" rx="8" fill="#D1E0E1" stroke="#BBCDCF"/>
+<text x="460" y="80" font-size="11" fill="#3A5157">line</text>
+<text x="460" y="96" font-size="10.5" fill="#51676D">#D1E0E1</text>
+<rect x="530" y="22" width="58" height="40" rx="8" fill="#0B272D" stroke="#BBCDCF"/>
+<text x="530" y="80" font-size="11" fill="#3A5157">text</text>
+<text x="530" y="96" font-size="10.5" fill="#51676D">#0B272D</text>
+<rect x="600" y="22" width="58" height="40" rx="8" fill="#3A5157" stroke="#BBCDCF"/>
+<text x="600" y="80" font-size="11" fill="#3A5157">text2</text>
+<text x="600" y="96" font-size="10.5" fill="#51676D">#3A5157</text>
+<rect x="670" y="22" width="58" height="40" rx="8" fill="#007672" stroke="#BBCDCF"/>
+<text x="670" y="80" font-size="11" fill="#3A5157">accent</text>
+<text x="670" y="96" font-size="10.5" fill="#51676D">#007672</text>
+<rect x="740" y="22" width="58" height="40" rx="8" fill="#42751D" stroke="#BBCDCF"/>
+<text x="740" y="80" font-size="11" fill="#3A5157">good</text>
+<text x="740" y="96" font-size="10.5" fill="#51676D">#42751D</text>
+<rect x="810" y="22" width="58" height="40" rx="8" fill="#4566B5" stroke="#BBCDCF"/>
+<text x="810" y="80" font-size="11" fill="#3A5157">app</text>
+<text x="810" y="96" font-size="10.5" fill="#51676D">#4566B5</text>
+<rect x="880" y="22" width="58" height="40" rx="8" fill="#87559C" stroke="#BBCDCF"/>
+<text x="880" y="80" font-size="11" fill="#3A5157">script</text>
+<text x="880" y="96" font-size="10.5" fill="#51676D">#87559C</text>
+</g>
+<g transform="translate(12 408)">
+<rect width="956" height="120" rx="14" fill="#EFF6ED" stroke="#D6E0D4"/>
+<text x="22" y="42" font-size="24" font-weight="700" fill="#15271E">竹林</text>
+<text x="22" y="68" font-size="14" font-weight="600" fill="#497517">Chikurin</text>
+<text x="22" y="92" font-size="12" fill="#415248">Bamboo grove · 木曜 Thursday</text>
+<rect x="250" y="22" width="58" height="40" rx="8" fill="#EFF6ED" stroke="#C2CDBF"/>
+<text x="250" y="80" font-size="11" fill="#415248">bg</text>
+<text x="250" y="96" font-size="10.5" fill="#57675E">#EFF6ED</text>
+<rect x="320" y="22" width="58" height="40" rx="8" fill="#FFFFFF" stroke="#C2CDBF"/>
+<text x="320" y="80" font-size="11" fill="#415248">surf</text>
+<text x="320" y="96" font-size="10.5" fill="#57675E">#FFFFFF</text>
+<rect x="390" y="22" width="58" height="40" rx="8" fill="#F1F8F0" stroke="#C2CDBF"/>
+<text x="390" y="80" font-size="11" fill="#415248">surf2</text>
+<text x="390" y="96" font-size="10.5" fill="#57675E">#F1F8F0</text>
+<rect x="460" y="22" width="58" height="40" rx="8" fill="#D6E0D4" stroke="#C2CDBF"/>
+<text x="460" y="80" font-size="11" fill="#415248">line</text>
+<text x="460" y="96" font-size="10.5" fill="#57675E">#D6E0D4</text>
+<rect x="530" y="22" width="58" height="40" rx="8" fill="#15271E" stroke="#C2CDBF"/>
+<text x="530" y="80" font-size="11" fill="#415248">text</text>
+<text x="530" y="96" font-size="10.5" fill="#57675E">#15271E</text>
+<rect x="600" y="22" width="58" height="40" rx="8" fill="#415248" stroke="#C2CDBF"/>
+<text x="600" y="80" font-size="11" fill="#415248">text2</text>
+<text x="600" y="96" font-size="10.5" fill="#57675E">#415248</text>
+<rect x="670" y="22" width="58" height="40" rx="8" fill="#497517" stroke="#C2CDBF"/>
+<text x="670" y="80" font-size="11" fill="#415248">accent</text>
+<text x="670" y="96" font-size="10.5" fill="#57675E">#497517</text>
+<rect x="740" y="22" width="58" height="40" rx="8" fill="#007671" stroke="#C2CDBF"/>
+<text x="740" y="80" font-size="11" fill="#415248">good</text>
+<text x="740" y="96" font-size="10.5" fill="#57675E">#007671</text>
+<rect x="810" y="22" width="58" height="40" rx="8" fill="#3B68B4" stroke="#C2CDBF"/>
+<text x="810" y="80" font-size="11" fill="#415248">app</text>
+<text x="810" y="96" font-size="10.5" fill="#57675E">#3B68B4</text>
+<rect x="880" y="22" width="58" height="40" rx="8" fill="#87569D" stroke="#C2CDBF"/>
+<text x="880" y="80" font-size="11" fill="#415248">script</text>
+<text x="880" y="96" font-size="10.5" fill="#57675E">#87569D</text>
+</g>
+<g transform="translate(12 540)">
+<rect width="956" height="120" rx="14" fill="#FBF1F5" stroke="#E5D8DE"/>
+<text x="22" y="42" font-size="24" font-weight="700" fill="#2A1D2D">夜桜</text>
+<text x="22" y="68" font-size="14" font-weight="600" fill="#AF416E">Yozakura</text>
+<text x="22" y="92" font-size="12" fill="#564958">Cherry blossom at night · 金曜 Friday</text>
+<rect x="250" y="22" width="58" height="40" rx="8" fill="#FBF1F5" stroke="#D3C4CB"/>
+<text x="250" y="80" font-size="11" fill="#564958">bg</text>
+<text x="250" y="96" font-size="10.5" fill="#6C5F6F">#FBF1F5</text>
+<rect x="320" y="22" width="58" height="40" rx="8" fill="#FFFFFF" stroke="#D3C4CB"/>
+<text x="320" y="80" font-size="11" fill="#564958">surf</text>
+<text x="320" y="96" font-size="10.5" fill="#6C5F6F">#FFFFFF</text>
+<rect x="390" y="22" width="58" height="40" rx="8" fill="#FCF3F7" stroke="#D3C4CB"/>
+<text x="390" y="80" font-size="11" fill="#564958">surf2</text>
+<text x="390" y="96" font-size="10.5" fill="#6C5F6F">#FCF3F7</text>
+<rect x="460" y="22" width="58" height="40" rx="8" fill="#E5D8DE" stroke="#D3C4CB"/>
+<text x="460" y="80" font-size="11" fill="#564958">line</text>
+<text x="460" y="96" font-size="10.5" fill="#6C5F6F">#E5D8DE</text>
+<rect x="530" y="22" width="58" height="40" rx="8" fill="#2A1D2D" stroke="#D3C4CB"/>
+<text x="530" y="80" font-size="11" fill="#564958">text</text>
+<text x="530" y="96" font-size="10.5" fill="#6C5F6F">#2A1D2D</text>
+<rect x="600" y="22" width="58" height="40" rx="8" fill="#564958" stroke="#D3C4CB"/>
+<text x="600" y="80" font-size="11" fill="#564958">text2</text>
+<text x="600" y="96" font-size="10.5" fill="#6C5F6F">#564958</text>
+<rect x="670" y="22" width="58" height="40" rx="8" fill="#AF416E" stroke="#D3C4CB"/>
+<text x="670" y="80" font-size="11" fill="#564958">accent</text>
+<text x="670" y="96" font-size="10.5" fill="#6C5F6F">#AF416E</text>
+<rect x="740" y="22" width="58" height="40" rx="8" fill="#217651" stroke="#D3C4CB"/>
+<text x="740" y="80" font-size="11" fill="#564958">good</text>
+<text x="740" y="96" font-size="10.5" fill="#6C5F6F">#217651</text>
+<rect x="810" y="22" width="58" height="40" rx="8" fill="#5662B5" stroke="#D3C4CB"/>
+<text x="810" y="80" font-size="11" fill="#564958">app</text>
+<text x="810" y="96" font-size="10.5" fill="#6C5F6F">#5662B5</text>
+<rect x="880" y="22" width="58" height="40" rx="8" fill="#8953A1" stroke="#D3C4CB"/>
+<text x="880" y="80" font-size="11" fill="#564958">script</text>
+<text x="880" y="96" font-size="10.5" fill="#6C5F6F">#8953A1</text>
+</g>
+<g transform="translate(12 672)">
+<rect width="956" height="120" rx="14" fill="#F4F2FB" stroke="#DDDBE6"/>
+<text x="22" y="42" font-size="24" font-weight="700" fill="#211F38">藤</text>
+<text x="22" y="68" font-size="14" font-weight="600" fill="#7057BB">Fuji</text>
+<text x="22" y="92" font-size="12" fill="#4C4B63">Wisteria · 土曜 Saturday</text>
+<rect x="250" y="22" width="58" height="40" rx="8" fill="#F4F2FB" stroke="#C9C7D4"/>
+<text x="250" y="80" font-size="11" fill="#4C4B63">bg</text>
+<text x="250" y="96" font-size="10.5" fill="#616178">#F4F2FB</text>
+<rect x="320" y="22" width="58" height="40" rx="8" fill="#FFFFFF" stroke="#C9C7D4"/>
+<text x="320" y="80" font-size="11" fill="#4C4B63">surf</text>
+<text x="320" y="96" font-size="10.5" fill="#616178">#FFFFFF</text>
+<rect x="390" y="22" width="58" height="40" rx="8" fill="#F6F4FD" stroke="#C9C7D4"/>
+<text x="390" y="80" font-size="11" fill="#4C4B63">surf2</text>
+<text x="390" y="96" font-size="10.5" fill="#616178">#F6F4FD</text>
+<rect x="460" y="22" width="58" height="40" rx="8" fill="#DDDBE6" stroke="#C9C7D4"/>
+<text x="460" y="80" font-size="11" fill="#4C4B63">line</text>
+<text x="460" y="96" font-size="10.5" fill="#616178">#DDDBE6</text>
+<rect x="530" y="22" width="58" height="40" rx="8" fill="#211F38" stroke="#C9C7D4"/>
+<text x="530" y="80" font-size="11" fill="#4C4B63">text</text>
+<text x="530" y="96" font-size="10.5" fill="#616178">#211F38</text>
+<rect x="600" y="22" width="58" height="40" rx="8" fill="#4C4B63" stroke="#C9C7D4"/>
+<text x="600" y="80" font-size="11" fill="#4C4B63">text2</text>
+<text x="600" y="96" font-size="10.5" fill="#616178">#4C4B63</text>
+<rect x="670" y="22" width="58" height="40" rx="8" fill="#7057BB" stroke="#C9C7D4"/>
+<text x="670" y="80" font-size="11" fill="#4C4B63">accent</text>
+<text x="670" y="96" font-size="10.5" fill="#616178">#7057BB</text>
+<rect x="740" y="22" width="58" height="40" rx="8" fill="#217651" stroke="#C9C7D4"/>
+<text x="740" y="80" font-size="11" fill="#4C4B63">good</text>
+<text x="740" y="96" font-size="10.5" fill="#616178">#217651</text>
+<rect x="810" y="22" width="58" height="40" rx="8" fill="#286BAA" stroke="#C9C7D4"/>
+<text x="810" y="80" font-size="11" fill="#4C4B63">app</text>
+<text x="810" y="96" font-size="10.5" fill="#616178">#286BAA</text>
+<rect x="880" y="22" width="58" height="40" rx="8" fill="#9D4B85" stroke="#C9C7D4"/>
+<text x="880" y="80" font-size="11" fill="#4C4B63">script</text>
+<text x="880" y="96" font-size="10.5" fill="#616178">#9D4B85</text>
+</g>
+</svg>
