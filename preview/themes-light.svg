@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 816" width="980" height="816" role="img" aria-label="The six light colour themes" font-family="'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', system-ui, sans-serif">
-<rect width="980" height="816" fill="#E4E4E6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 948" width="1050" height="948" role="img" aria-label="The light colour themes" font-family="'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', system-ui, sans-serif">
+<rect width="1050" height="948" fill="#E4E4E6"/>
 <g transform="translate(12 12)">
-<rect width="956" height="120" rx="14" fill="#F6F5F1" stroke="#E3E0D8"/>
+<rect width="1026" height="120" rx="14" fill="#F6F5F1" stroke="#E3E0D8"/>
 <text x="22" y="42" font-size="24" font-weight="700" fill="#1A2238">月明かり</text>
 <text x="22" y="68" font-size="14" font-weight="600" fill="#8C6000">Tsukiakari</text>
 <text x="22" y="92" font-size="12" fill="#4D566E">Moonlight · 月曜 Monday</text>
@@ -35,9 +35,12 @@
 <rect x="880" y="22" width="58" height="40" rx="8" fill="#7A4E9C" stroke="#CFCBC0"/>
 <text x="880" y="80" font-size="11" fill="#4D566E">script</text>
 <text x="880" y="96" font-size="10.5" fill="#5F6880">#7A4E9C</text>
+<rect x="950" y="22" width="58" height="40" rx="8" fill="#B23A1B" stroke="#CFCBC0"/>
+<text x="950" y="80" font-size="11" fill="#4D566E">warn</text>
+<text x="950" y="96" font-size="10.5" fill="#5F6880">#B23A1B</text>
 </g>
 <g transform="translate(12 144)">
-<rect width="956" height="120" rx="14" fill="#F9F3EB" stroke="#E3DBD2"/>
+<rect width="1026" height="120" rx="14" fill="#F9F3EB" stroke="#E3DBD2"/>
 <text x="22" y="42" font-size="24" font-weight="700" fill="#27221E">墨と朱</text>
 <text x="22" y="68" font-size="14" font-weight="600" fill="#BC3C1B">Sumi</text>
 <text x="22" y="92" font-size="12" fill="#514D49">Ink and vermilion · 火曜 Tuesday</text>
@@ -71,9 +74,12 @@
 <rect x="880" y="22" width="58" height="40" rx="8" fill="#8257A0" stroke="#D1C7BC"/>
 <text x="880" y="80" font-size="11" fill="#514D49">script</text>
 <text x="880" y="96" font-size="10.5" fill="#67625F">#8257A0</text>
+<rect x="950" y="22" width="58" height="40" rx="8" fill="#8B5500" stroke="#D1C7BC"/>
+<text x="950" y="80" font-size="11" fill="#514D49">warn</text>
+<text x="950" y="96" font-size="10.5" fill="#67625F">#8B5500</text>
 </g>
 <g transform="translate(12 276)">
-<rect width="956" height="120" rx="14" fill="#EBF6F8" stroke="#D1E0E1"/>
+<rect width="1026" height="120" rx="14" fill="#EBF6F8" stroke="#D1E0E1"/>
 <text x="22" y="42" font-size="24" font-weight="700" fill="#0B272D">海</text>
 <text x="22" y="68" font-size="14" font-weight="600" fill="#007672">Umi</text>
 <text x="22" y="92" font-size="12" fill="#3A5157">Deep sea · 水曜 Wednesday</text>
@@ -107,9 +113,12 @@
 <rect x="880" y="22" width="58" height="40" rx="8" fill="#87559C" stroke="#BBCDCF"/>
 <text x="880" y="80" font-size="11" fill="#3A5157">script</text>
 <text x="880" y="96" font-size="10.5" fill="#51676D">#87559C</text>
+<rect x="950" y="22" width="58" height="40" rx="8" fill="#B23A1B" stroke="#BBCDCF"/>
+<text x="950" y="80" font-size="11" fill="#3A5157">warn</text>
+<text x="950" y="96" font-size="10.5" fill="#51676D">#B23A1B</text>
 </g>
 <g transform="translate(12 408)">
-<rect width="956" height="120" rx="14" fill="#EFF6ED" stroke="#D6E0D4"/>
+<rect width="1026" height="120" rx="14" fill="#EFF6ED" stroke="#D6E0D4"/>
 <text x="22" y="42" font-size="24" font-weight="700" fill="#15271E">竹林</text>
 <text x="22" y="68" font-size="14" font-weight="600" fill="#497517">Chikurin</text>
 <text x="22" y="92" font-size="12" fill="#415248">Bamboo grove · 木曜 Thursday</text>
@@ -143,9 +152,12 @@
 <rect x="880" y="22" width="58" height="40" rx="8" fill="#87569D" stroke="#C2CDBF"/>
 <text x="880" y="80" font-size="11" fill="#415248">script</text>
 <text x="880" y="96" font-size="10.5" fill="#57675E">#87569D</text>
+<rect x="950" y="22" width="58" height="40" rx="8" fill="#B23A1B" stroke="#C2CDBF"/>
+<text x="950" y="80" font-size="11" fill="#415248">warn</text>
+<text x="950" y="96" font-size="10.5" fill="#57675E">#B23A1B</text>
 </g>
 <g transform="translate(12 540)">
-<rect width="956" height="120" rx="14" fill="#FBF1F5" stroke="#E5D8DE"/>
+<rect width="1026" height="120" rx="14" fill="#FBF1F5" stroke="#E5D8DE"/>
 <text x="22" y="42" font-size="24" font-weight="700" fill="#2A1D2D">夜桜</text>
 <text x="22" y="68" font-size="14" font-weight="600" fill="#AF416E">Yozakura</text>
 <text x="22" y="92" font-size="12" fill="#564958">Cherry blossom at night · 金曜 Friday</text>
@@ -179,9 +191,12 @@
 <rect x="880" y="22" width="58" height="40" rx="8" fill="#8953A1" stroke="#D3C4CB"/>
 <text x="880" y="80" font-size="11" fill="#564958">script</text>
 <text x="880" y="96" font-size="10.5" fill="#6C5F6F">#8953A1</text>
+<rect x="950" y="22" width="58" height="40" rx="8" fill="#B23A1B" stroke="#D3C4CB"/>
+<text x="950" y="80" font-size="11" fill="#564958">warn</text>
+<text x="950" y="96" font-size="10.5" fill="#6C5F6F">#B23A1B</text>
 </g>
 <g transform="translate(12 672)">
-<rect width="956" height="120" rx="14" fill="#F4F2FB" stroke="#DDDBE6"/>
+<rect width="1026" height="120" rx="14" fill="#F4F2FB" stroke="#DDDBE6"/>
 <text x="22" y="42" font-size="24" font-weight="700" fill="#211F38">藤</text>
 <text x="22" y="68" font-size="14" font-weight="600" fill="#7057BB">Fuji</text>
 <text x="22" y="92" font-size="12" fill="#4C4B63">Wisteria · 土曜 Saturday</text>
@@ -215,5 +230,47 @@
 <rect x="880" y="22" width="58" height="40" rx="8" fill="#9D4B85" stroke="#C9C7D4"/>
 <text x="880" y="80" font-size="11" fill="#4C4B63">script</text>
 <text x="880" y="96" font-size="10.5" fill="#616178">#9D4B85</text>
+<rect x="950" y="22" width="58" height="40" rx="8" fill="#B23A1B" stroke="#C9C7D4"/>
+<text x="950" y="80" font-size="11" fill="#4C4B63">warn</text>
+<text x="950" y="96" font-size="10.5" fill="#616178">#B23A1B</text>
+</g>
+<g transform="translate(12 804)">
+<rect width="1026" height="120" rx="14" fill="#EFE6D8" stroke="#DDD1BF"/>
+<text x="22" y="42" font-size="24" font-weight="700" fill="#2A1E17">帳場</text>
+<text x="22" y="68" font-size="14" font-weight="600" fill="#165E83">Chōba</text>
+<text x="22" y="92" font-size="12" fill="#55473C">The counting desk · 仕分け Shiwake</text>
+<rect x="250" y="22" width="58" height="40" rx="8" fill="#EFE6D8" stroke="#C6B7A1"/>
+<text x="250" y="80" font-size="11" fill="#55473C">bg</text>
+<text x="250" y="96" font-size="10.5" fill="#685A4E">#EFE6D8</text>
+<rect x="320" y="22" width="58" height="40" rx="8" fill="#FFFFFF" stroke="#C6B7A1"/>
+<text x="320" y="80" font-size="11" fill="#55473C">surf</text>
+<text x="320" y="96" font-size="10.5" fill="#685A4E">#FFFFFF</text>
+<rect x="390" y="22" width="58" height="40" rx="8" fill="#F8F3EA" stroke="#C6B7A1"/>
+<text x="390" y="80" font-size="11" fill="#55473C">surf2</text>
+<text x="390" y="96" font-size="10.5" fill="#685A4E">#F8F3EA</text>
+<rect x="460" y="22" width="58" height="40" rx="8" fill="#DDD1BF" stroke="#C6B7A1"/>
+<text x="460" y="80" font-size="11" fill="#55473C">line</text>
+<text x="460" y="96" font-size="10.5" fill="#685A4E">#DDD1BF</text>
+<rect x="530" y="22" width="58" height="40" rx="8" fill="#2A1E17" stroke="#C6B7A1"/>
+<text x="530" y="80" font-size="11" fill="#55473C">text</text>
+<text x="530" y="96" font-size="10.5" fill="#685A4E">#2A1E17</text>
+<rect x="600" y="22" width="58" height="40" rx="8" fill="#55473C" stroke="#C6B7A1"/>
+<text x="600" y="80" font-size="11" fill="#55473C">text2</text>
+<text x="600" y="96" font-size="10.5" fill="#685A4E">#55473C</text>
+<rect x="670" y="22" width="58" height="40" rx="8" fill="#165E83" stroke="#C6B7A1"/>
+<text x="670" y="80" font-size="11" fill="#55473C">accent</text>
+<text x="670" y="96" font-size="10.5" fill="#685A4E">#165E83</text>
+<rect x="740" y="22" width="58" height="40" rx="8" fill="#256B4A" stroke="#C6B7A1"/>
+<text x="740" y="80" font-size="11" fill="#55473C">good</text>
+<text x="740" y="96" font-size="10.5" fill="#685A4E">#256B4A</text>
+<rect x="810" y="22" width="58" height="40" rx="8" fill="#7A5500" stroke="#C6B7A1"/>
+<text x="810" y="80" font-size="11" fill="#55473C">app</text>
+<text x="810" y="96" font-size="10.5" fill="#685A4E">#7A5500</text>
+<rect x="880" y="22" width="58" height="40" rx="8" fill="#7A4E9C" stroke="#C6B7A1"/>
+<text x="880" y="80" font-size="11" fill="#55473C">script</text>
+<text x="880" y="96" font-size="10.5" fill="#685A4E">#7A4E9C</text>
+<rect x="950" y="22" width="58" height="40" rx="8" fill="#A63317" stroke="#C6B7A1"/>
+<text x="950" y="80" font-size="11" fill="#55473C">warn</text>
+<text x="950" y="96" font-size="10.5" fill="#685A4E">#A63317</text>
 </g>
 </svg>

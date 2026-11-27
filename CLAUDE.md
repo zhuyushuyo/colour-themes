@@ -4,12 +4,14 @@ This repository holds the owner's own colours. When you make anything for the ow
 
 ## How to use it
 
-- Read `themes/tokens.json`. It is the source of truth: six themes, each with a `dark` and a `light` palette that share the same role names (`bg`, `surf`, `text`, `accent`, ...).
+- Read `themes/tokens.json`. It is the source of truth: six weekday themes (`themes`), each with a `dark` and a `light` palette that share the same role names (`bg`, `surf`, `text`, `accent`, ...), and app themes (`app_themes`) made the same way.
 - Pick one theme for the whole piece. If the owner did not name one, use the theme of the day it is made (`weekdays` in the tokens file; on Sunday use 月明かり Tsukiakari), and say which one you used.
-- Use the roles as the README describes. One accent per piece; `good`, `app` and `script` are for data.
+- An app theme belongs to one app (帳場 Chōba is Shiwake's). Use it only for that app, or for slides and pages about it. Never use one as the theme of the day.
+- Use the roles as the README describes. One accent per piece; `good`, `app` and `script` are for data. `warn` marks what a person must check; like `good` it is a state, always beside a word or a mark, never a second accent.
 - Use the Japanese name with its reading when you mention a theme: 夜桜 Yozakura.
 - Pick one mode for the whole piece. If the owner did not say, use dark for apps and for slides shown on a screen, and light for documents, print and anything read in a bright room. Say which one you used.
 - Never mix the two palettes, and never use a dark-mode accent on a light background: it cannot be read there. Take the accent from the light palette.
+- App icons are in `icons/<app>/`. Use the files; do not redraw them.
 
 ## Changing this repository
 

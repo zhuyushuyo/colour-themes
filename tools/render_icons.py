@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Make the PNG files and the Windows .ico from icons/tsukiakari/icon.svg.
+"""Make the PNG files and the Windows .ico from each app's icons/<app>/icon.svg.
 
-    python tools/render_icons.py
+    python tools/render_icons.py            # every app
+    python tools/render_icons.py shiwake    # one app
 
-Needs PyQt6 (the apps already use it). Run tools/build.py first.
+Needs PyQt6 (the apps already use it). Run tools/build.py first: it writes the
+Tsukiakari SVGs. Other apps' icon.svg files are drawn by hand and kept as they are.
 """
 
 from __future__ import annotations
@@ -19,7 +21,7 @@ from PyQt6.QtCore import QBuffer, QByteArray, QIODevice, QRectF, Qt  # noqa: E40
 from PyQt6.QtGui import QGuiApplication, QImage, QPainter  # noqa: E402
 from PyQt6.QtSvg import QSvgRenderer  # noqa: E402
 
-FOLDER = Path(__file__).resolve().parents[1] / "icons" / "tsukiakari"
+ICONS = Path(__file__).resolve().parents[1] / "icons"
 PNG_SIZES = (16, 24, 32, 48, 64, 128, 256, 512, 1024)
 ICO_SIZES = (16, 24, 32, 48, 64, 128, 256)
 
@@ -53,20 +55,27 @@ def write_ico(path: Path, images: dict[int, bytes]) -> None:
     path.write_bytes(header + entries + blobs)
 
 
-def main() -> int:
-    app = QGuiApplication(sys.argv)  # noqa: F841 (Qt needs one to draw)
-    renderer = QSvgRenderer(str(FOLDER / "icon.svg"))
+def render_app(folder: Path) -> bool:
+    """Write png/icon-<size>.png and icon.ico from folder/icon.svg."""
+    renderer = QSvgRenderer(str(folder / "icon.svg"))
     if not renderer.isValid():
-        print("icons/tsukiakari/icon.svg is missing or not valid. Run tools/build.py first.")
-        return 1
-    png = FOLDER / "png"
+        print("icons/{}/icon.svg is missing or not valid.".format(folder.name))
+        return False
+    png = folder / "png"
     png.mkdir(exist_ok=True)
     images = {size: render(renderer, size) for size in PNG_SIZES}
     for size, data in images.items():
         (png / "icon-{}.png".format(size)).write_bytes(data)
-    write_ico(FOLDER / "icon.ico", {size: images[size] for size in ICO_SIZES})
-    print("Wrote {} PNG files and icon.ico".format(len(images)))
-    return 0
+    write_ico(folder / "icon.ico", {size: images[size] for size in ICO_SIZES})
+    print("icons/{}: wrote {} PNG files and icon.ico".format(folder.name, len(images)))
+    return True
+
+
+def main() -> int:
+    app = QGuiApplication(sys.argv[:1])  # noqa: F841 (Qt needs one to draw)
+    names = sys.argv[1:] or sorted(p.name for p in ICONS.iterdir() if (p / "icon.svg").exists())
+    ok = [render_app(ICONS / name) for name in names]
+    return 0 if all(ok) else 1
 
 
 if __name__ == "__main__":
