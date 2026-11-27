@@ -3,9 +3,10 @@
 
     python tools/build.py
 
-Reads themes/tokens.json (the one source of truth), checks text contrast, and
-writes themes/themes.css, preview/themes.svg, preview/themes-light.svg,
-preview/index.html and the icon SVGs. It needs only Python's standard library.
+Reads themes/tokens.json (the one source of truth), checks text contrast for the
+six weekday themes and the app themes, and writes themes/themes.css,
+preview/themes.svg, preview/themes-light.svg, preview/index.html and the
+Tsukiakari icon SVGs. It needs only Python's standard library.
 It stops with an error, and writes nothing, when a theme fails the contrast
 check in either mode (dark or light).
 """
@@ -24,21 +25,29 @@ TOKENS = ROOT / "themes" / "tokens.json"
 CHECKS = [
     ("text", "bg", 7.0), ("text", "surf2", 7.0), ("text2", "surf2", 4.5), ("text3", "surf2", 4.5),
     ("text3", "side", 4.5), ("accent", "bg", 4.5), ("accent", "surf2", 4.5), ("btn_ink", "btn", 7.0),
-    ("good", "side", 4.5),
+    ("good", "side", 4.5), ("warn", "bg", 4.5), ("warn", "side", 4.5), ("warn", "surf2", 4.5),
 ]
 # Light palettes are also used on paper-white slides and cards, so more is checked there.
 LIGHT_CHECKS = CHECKS + [
     ("text2", "side", 4.5), ("accent", "side", 4.5), ("accent", "surf", 4.5),
     ("good", "bg", 4.5), ("app", "bg", 4.5), ("app", "side", 4.5),
-    ("script", "bg", 4.5), ("script", "side", 4.5),
+    ("script", "bg", 4.5), ("script", "side", 4.5), ("warn", "surf", 4.5),
 ]
 MODES = ("dark", "light")
 MODE_CHECKS = {"dark": CHECKS, "light": LIGHT_CHECKS}
 SOLID = ("bg", "side", "surf", "surf2", "line", "line_strong", "text", "text2", "text3", "accent",
-         "btn", "btn_ink", "track", "good", "app", "script")
+         "btn", "btn_ink", "track", "good", "app", "script", "warn")
 WEEKDAY_JA = {"mon": "月", "tue": "火", "wed": "水", "thu": "木", "fri": "金", "sat": "土"}
 WEEKDAY_EN = {"mon": "Monday", "tue": "Tuesday", "wed": "Wednesday", "thu": "Thursday",
               "fri": "Friday", "sat": "Saturday"}
+
+
+def when(theme: dict, short: bool = False) -> str:
+    """The weekday of a weekday theme, or the app an app theme belongs to."""
+    if "weekday" in theme:
+        return "{}曜 {}".format(WEEKDAY_JA[theme["weekday"]], WEEKDAY_EN[theme["weekday"]])
+    app = theme.get("app_name", theme["app"])
+    return app if short else "App theme for {}".format(app)
 
 
 def _channel(value: int) -> float:
@@ -57,8 +66,15 @@ def contrast(a: str, b: str) -> float:
 
 
 def check(themes: list[dict]) -> list[str]:
+    """Problems with the palettes of `themes` (weekday and app themes alike)."""
     problems = []
+    seen = set()
     for theme in themes:
+        if theme["id"] in seen:
+            problems.append("{}: two themes have this id".format(theme["id"]))
+        seen.add(theme["id"])
+        if "weekday" not in theme and not theme.get("app"):
+            problems.append("{}: an app theme needs `app`, the app it belongs to".format(theme["id"]))
         for mode in MODES:
             name = "{} ({})".format(theme["id"], mode)
             palette = theme.get(mode)
@@ -100,7 +116,7 @@ def write_css(themes: list[dict]) -> None:
             selector = '[data-theme="{}"]'.format(theme["id"])
             if mode == "light":
                 selector += '[data-mode="light"]'
-            if index == 0:
+            if index == 0 and "weekday" in theme:
                 first = ':root[data-mode="light"]' if mode == "light" else ":root"
                 selector = first + ", " + selector
             lines.append("/* {} {} ({}), {} */".format(
@@ -190,11 +206,11 @@ def write_icons(themes: list[dict]) -> None:
 
 def write_swatch_sheet(themes: list[dict], mode: str = "dark") -> None:
     """One SVG that GitHub shows in the README: a row per theme, for one mode."""
-    row_h, width = 132, 980
+    row_h, width = 132, 1050
     height = 24 + row_h * len(themes)
     parts = [
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" '
-        'role="img" aria-label="The six {mode} colour themes" '
+        'role="img" aria-label="The {mode} colour themes" '
         'font-family="\'Hiragino Sans\', \'Yu Gothic UI\', \'Noto Sans JP\', system-ui, sans-serif">'
         .format(w=width, h=height, mode=mode),
         '<rect width="{w}" height="{h}" fill="{c}"/>'.format(
@@ -202,7 +218,7 @@ def write_swatch_sheet(themes: list[dict], mode: str = "dark") -> None:
     ]
     shown = (("bg", "bg"), ("surf", "surf"), ("surf2", "surf2"), ("line", "line"),
              ("text", "text"), ("text2", "text2"), ("accent", "accent"), ("good", "good"),
-             ("app", "app"), ("script", "script"))
+             ("app", "app"), ("script", "script"), ("warn", "warn"))
     for index, theme in enumerate(themes):
         p = theme[mode]
         y = 12 + index * row_h
@@ -214,8 +230,7 @@ def write_swatch_sheet(themes: list[dict], mode: str = "dark") -> None:
         parts.append('<text x="22" y="68" font-size="14" font-weight="600" fill="{c}">{t}</text>'.format(
             c=p["accent"], t=html.escape(theme["reading"])))
         parts.append('<text x="22" y="92" font-size="12" fill="{c}">{t}</text>'.format(
-            c=p["text2"], t=html.escape("{} · {}曜 {}".format(
-                theme["meaning"], WEEKDAY_JA[theme["weekday"]], WEEKDAY_EN[theme["weekday"]]))))
+            c=p["text2"], t=html.escape("{} · {}".format(theme["meaning"], when(theme, short=True)))))
         for n, (key, label) in enumerate(shown):
             x = 250 + n * 70
             parts.append('<rect x="{x}" y="22" width="58" height="40" rx="8" fill="{c}" stroke="{s}"/>'
@@ -230,6 +245,14 @@ def write_swatch_sheet(themes: list[dict], mode: str = "dark") -> None:
     (ROOT / "preview" / name).write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
+def brand_of(theme: dict) -> tuple[str, str]:
+    """The app name shown in a preview card: Tsukiakari for weekday themes, else the theme's app."""
+    if "weekday" in theme:
+        return "月明かり", "Tsukiakari"
+    ja, _, en = theme.get("app_name", theme["app"]).partition(" ")
+    return ja, en or theme["app"]
+
+
 def write_preview_page(themes: list[dict]) -> None:
     """A page to open in a browser: every theme on a small app window, dark then light."""
     cards = []
@@ -240,22 +263,23 @@ def write_preview_page(themes: list[dict]) -> None:
             for name in ("ホーム", "チャット", "タスク", "ビルド", "使用量", "設定"))
         chips = "".join(
             '<span class="chip"><i style="background:{c}"></i>{k} {c}</span>'.format(k=key, c=p[key])
-            for key in ("bg", "surf2", "line", "text", "accent", "good"))
+            for key in ("bg", "surf2", "line", "text", "accent", "good", "warn"))
         cards.append(
             '<section class="card" data-theme="{id}" data-mode="{mode}">'
-            '<aside><div class="brand"><b>月明かり</b><small>Tsukiakari</small></div>{nav}</aside>'
+            '<aside><div class="brand"><b>{brand}</b><small>{brand_en}</small></div>{nav}</aside>'
             '<main><h2>{ja} <em>{reading} · {mode}</em></h2>'
-            '<p class="about">{meaning}. {description} {day}曜 ({day_en}).</p>'
+            '<p class="about">{meaning}. {description} {when}.</p>'
             '<div class="you"><small>あなた</small>来週の勉強会の案内文を、3行くらいで下書きしてください。</div>'
             '<div class="claude"><small>Claude</small>下書きです。日時は11月20日（金）15:00〜16:00です。 '
-            '<a href="#">全文を見る</a></div>'
+            '<a href="#">全文を見る</a> <span class="warn">場所は未定です</span></div>'
             '<div class="row"><span class="field">メッセージを入力</span><button type="button">送信</button></div>'
             '<div class="chips">{chips}</div></main></section>'.format(
                 id=theme["id"], mode=mode, nav=nav, ja=html.escape(theme["ja"]),
                 reading=theme["reading"], meaning=html.escape(theme["meaning"]),
                 description=html.escape(
                     theme["description"] if mode == "dark" else theme["light_description"]),
-                day=WEEKDAY_JA[theme["weekday"]], day_en=WEEKDAY_EN[theme["weekday"]], chips=chips))
+                when=html.escape(when(theme)), chips=chips,
+                brand=html.escape(brand_of(theme)[0]), brand_en=html.escape(brand_of(theme)[1])))
     css = (ROOT / "themes" / "themes.css").read_text(encoding="utf-8")
     page = """<!doctype html>
 <html lang="ja">
@@ -286,6 +310,8 @@ h2 em {{ font-style: normal; font-size: 13px; color: var(--ct-accent); font-weig
 .claude {{ background: var(--ct-surf); }}
 .you small, .claude small {{ display: block; color: var(--ct-text3); font-weight: 600; font-size: 10.5px; }}
 .card a {{ color: var(--ct-accent); }}
+.card .warn {{ color: var(--ct-warn); font-weight: 600; }}
+.card .warn::before {{ content: "! "; }}
 .row {{ display: flex; gap: 10px; }}
 .field {{ flex: 1; display: flex; align-items: center; min-height: 44px; padding: 0 12px;
   border: 1px solid var(--ct-line-strong); border-radius: 10px; background: var(--ct-surf);
@@ -311,9 +337,10 @@ button {{ min-width: 84px; min-height: 44px; border: 0; border-radius: 10px; bac
 
 def main() -> int:
     data = json.loads(TOKENS.read_text(encoding="utf-8"))
-    themes = data["themes"]
+    weekday_themes = data["themes"]
+    themes = weekday_themes + data.get("app_themes", [])
     problems = check(themes)
-    ids = [theme["id"] for theme in themes]
+    ids = [theme["id"] for theme in weekday_themes]
     for day, theme_id in data["weekdays"].items():
         if theme_id is not None and theme_id not in ids:
             problems.append("weekdays: {} names an unknown theme {}".format(day, theme_id))
@@ -323,11 +350,12 @@ def main() -> int:
             print("  " + line)
         return 1
     write_css(themes)
-    write_icons(themes)
+    write_icons(weekday_themes)
     for mode in MODES:
         write_swatch_sheet(themes, mode)
     write_preview_page(themes)
-    print("{} themes pass the contrast check in dark and light. Files written.".format(len(themes)))
+    print("{} weekday and {} app themes pass the contrast check in dark and light. Files written.".format(
+        len(weekday_themes), len(themes) - len(weekday_themes)))
     return 0
 
 

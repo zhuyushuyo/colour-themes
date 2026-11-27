@@ -4,9 +4,11 @@ One set of colours for my apps, slides and documents, so they look like they bel
 
 Six themes, each named after a Japanese scene and each tied to a day of the week. Monday to Saturday take the element in the day's name (月 moon, 火 fire, 水 water, 木 wood) or its mood; Sunday rests. Every theme has a dark palette and a light palette.
 
-![The six themes, dark](preview/themes.svg)
+Some apps also have a theme of their own, an **app theme**, made the same way (see [App themes](#app-themes)). The swatch sheets show the six weekday themes first, then the app themes.
 
-![The six themes, light](preview/themes-light.svg)
+![The themes, dark](preview/themes.svg)
+
+![The themes, light](preview/themes-light.svg)
 
 | Day | Theme | Meaning | Colours | Why this day |
 | --- | --- | --- | --- | --- |
@@ -37,20 +39,34 @@ A light palette is not the dark one turned inside out. It is made in three moves
 2. **Paper.** The background is a very pale tint of the theme's hue, with pure white for cards (`surf`).
 3. **Accent.** The same hue as the dark accent, made deeper until it can be read on the paper (the pale dark-mode accents are only 1.6:1 to 2.7:1 on white).
 
-The primary button is the accent in dark and the ink in light. The data colours (`good`, `app`, `script`) are deepened in the same way.
+The primary button is the accent in dark and the ink in light. The data colours (`good`, `app`, `script`) and `warn` are deepened in the same way.
+
+## App themes
+
+An app theme is the default look of one app: it says "this is that app" at a glance. It has every role of a weekday theme, in dark and in light, and passes the same checks. The app can still offer the six weekday themes and "follow the weekday".
+
+| Theme | App | Dark | Light | Why |
+| --- | --- | --- | --- | --- |
+| 帳場 Chōba (the counting desk) | 仕分け Shiwake | Dark wood, pale indigo ink, seal red | Kraft paper, white slips, indigo ink, seal red | Shiwake sorts paper slips at a desk; the red seal marks the slips a person must check |
+
+Use an app theme only for its own app, and for slides or pages about that app. It is never the theme of the day.
+
+An app theme is designed for one app at a time, when that app needs a look of its own. An app that fits a weekday theme well can simply use the weekday themes.
 
 ## What is here
 
 | Path | What it is |
 | --- | --- |
-| `themes/tokens.json` | **The source of truth.** Every theme, its names, its weekday and its colours by role, under `dark` and `light`. |
+| `themes/tokens.json` | **The source of truth.** The six weekday themes (`themes`) and the app themes (`app_themes`): names, weekday or app, and colours by role under `dark` and `light`. |
 | `themes/themes.css` | The same colours as CSS variables (`--ct-bg`, `--ct-accent`, ...), one block per theme and mode. Made by the build tool. |
-| `colour_themes.py` | A small Python helper: `palette("umi")`, `palette("umi", mode="light")`, `theme_for_date(date.today())`. |
+| `colour_themes.py` | A small Python helper: `palette("umi")`, `palette("umi", mode="light")`, `theme_for_date(date.today())`, `app_theme_for("shiwake")`. |
 | `preview/index.html` | Open in a browser to see every theme, dark and light, on a small app window. |
 | `preview/themes.svg`, `preview/themes-light.svg` | The swatch sheets shown above. |
-| `icons/tsukiakari/` | The Tsukiakari app icon (moon on water): `icon.svg`, PNG sizes, `icon.ico`, one variant per theme, and the three concepts that were not chosen. |
-| `tools/build.py` | Checks the themes and writes the CSS, the previews and the icon SVGs. |
-| `tools/render_icons.py` | Makes the PNG files and the `.ico` from `icon.svg` (needs PyQt6). |
+| `icons/<app>/` | One folder per app: `icon.svg` (the source), `png/` sizes 16 to 1024, and `icon.ico`. The app's repository keeps a copy. |
+| `icons/tsukiakari/` | Moon on water. Also one variant per weekday theme, and the three concepts that were not chosen. Its SVGs are made by `tools/build.py`. |
+| `icons/shiwake/` | Three slips sorted into steps, with a red seal, on kraft paper. Drawn by hand. |
+| `tools/build.py` | Checks the themes and writes the CSS, the previews and the Tsukiakari icon SVGs. |
+| `tools/render_icons.py` | Makes the PNG files and the `.ico` from each `icons/<app>/icon.svg`, or one app's (needs PyQt6). |
 
 ## The roles
 
@@ -67,6 +83,7 @@ Every palette has the same role names, so a design made with one theme works wit
 | `btn`, `btn_ink` | The primary button and the text on it (the accent in dark, the ink in light) |
 | `track` | The empty part of a meter |
 | `good`, `app`, `script` | Success, and two more colours for charts and labels |
+| `warn` | What a person must check: a slip that was not read well, an overdue payment, a weak password |
 
 ## Using it
 
@@ -79,6 +96,7 @@ import colour_themes
 palette = colour_themes.palette("yozakura")              # {"bg": "#17121A", ...}
 paper = colour_themes.palette("yozakura", mode="light")  # {"bg": "#FBF1F5", ...}
 today = colour_themes.theme_for_date(date.today(), base="tsukiakari")
+own = colour_themes.app_theme_for("shiwake")              # "choba", or None for an app without one
 ```
 
 **Web pages.** Link `themes/themes.css` and set the theme on any element.
@@ -97,12 +115,13 @@ today = colour_themes.theme_for_date(date.today(), base="tsukiakari")
 
 - All text passes a contrast check: 4.5:1 or better for every text colour on the backgrounds it is used on, 7:1 for body text. `tools/build.py` refuses to write anything when a theme fails.
 - One accent per theme. A second bright colour is for data only.
+- `warn` and `good` are states, not accents. Put a word or a mark beside them, so that colour is never the only signal. `warn` is vermilion (朱) in every theme but 墨と朱 Sumi, where the accent is already vermilion: there it is amber (山吹).
 - In light palettes, the accent and the data colours are also checked on the sidebar and on white, because they are used as text there.
 
 ## Adding or changing a theme
 
-1. Edit `themes/tokens.json`. A new theme needs every role in both `dark` and `light`.
+1. Edit `themes/tokens.json`. A new theme needs every role in both `dark` and `light`. A weekday theme has `weekday`; an app theme goes in `app_themes` and has `app` (the repository name) and `app_name`.
 2. Run `python tools/build.py`. Fix what it reports.
-3. If the Tsukiakari icon's colours changed, run `python tools/render_icons.py`.
+3. If an icon changed, run `python tools/render_icons.py <app>` (the Tsukiakari icon changes when its theme colours do).
 4. Open `preview/index.html` and look at it.
 5. Commit everything, the made files included.

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Shiwake">
+<title>Shiwake</title>
+<rect width="256" height="256" rx="58" fill="#D6BD94"/>
+<rect x="30" y="51" width="136" height="46" rx="9" fill="#FBF8F2" opacity="0.55"/>
+<rect x="47" y="70" width="58" height="8" rx="4" fill="#165E83" opacity="0.45"/>
+<rect x="60" y="105" width="136" height="46" rx="9" fill="#FBF8F2" opacity="0.8"/>
+<rect x="77" y="124" width="58" height="8" rx="4" fill="#165E83" opacity="0.7"/>
+<rect x="90" y="159" width="136" height="46" rx="9" fill="#FBF8F2"/>
+<rect x="107" y="178" width="44" height="8" rx="4" fill="#165E83"/>
+<circle cx="197" cy="182" r="14" fill="#D9482B"/>
+</svg>
