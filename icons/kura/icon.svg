@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Kura icon: a storehouse with a play-button door">
+<title>Kura icon: a storehouse with a play-button door</title>
+<rect width="256" height="256" rx="58" fill="#F1ECE2"/>
+<path d="M34 108 L74 58 H182 L222 108 Z" fill="#2A2A2E"/>
+<rect x="60" y="108" width="136" height="104" fill="#FBF8F2"/>
+<rect x="60" y="176" width="136" height="36" fill="#2A2A2E"/>
+<clipPath id="band"><rect x="60" y="176" width="136" height="36"/></clipPath>
+<g clip-path="url(#band)" stroke="#FBF8F2" stroke-width="4">
+<path d="M42 176l36 36M78 176l36 36M114 176l36 36M150 176l36 36M186 176l36 36"/>
+<path d="M78 176l-36 36M114 176l-36 36M150 176l-36 36M186 176l-36 36M222 176l-36 36"/></g>
+<rect x="104" y="124" width="48" height="52" rx="4" fill="#2A2A2E"/>
+<path d="M120 136 L142 150 L120 164 Z" fill="#FBF8F2"/>
+</svg>
