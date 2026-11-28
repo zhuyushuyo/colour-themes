@@ -67,7 +67,7 @@ An app theme is designed for one app at a time, when that app needs a look of it
 | `icons/shiwake/` | Three slips sorted into steps, with a red seal, on kraft paper. Drawn by hand. |
 | `icons/kinko/` | KINKO (金庫): a koban, the oval gold coin, with a keyhole, on dark indigo. Drawn by hand. |
 | `icons/kura/` | Kura (蔵): a white-plaster storehouse with a black roof and namako tiles; its door is a play button. Drawn by hand. |
-| `icons/clear/` | CLEAR: three bars going down, and the sun coming out where they end. Drawn by hand. |
+| `icons/clear/` | CLEAR: three bars going down, and the sun coming out where they end. Drawn by hand. `previous/icon-4.1.svg` is the icon CLEAR had before it (4.1.1 and 4.1.2): a tick turning into a rising arrow over bars, blue to teal. Kept for reference; not used. |
 | `tools/build.py` | Checks the themes and writes the CSS, the previews and the Tsukiakari icon SVGs. |
 | `tools/render_icons.py` | Makes the PNG files and the `.ico` from each `icons/<app>/icon.svg`, or one app's (needs PyQt6). |
 
