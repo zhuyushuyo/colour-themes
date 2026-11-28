@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="CLEAR icon: bars going down to a clear sky">
+<title>CLEAR icon: bars going down to a clear sky</title>
+<rect width="256" height="256" rx="58" fill="#E3EEF4"/>
+<rect x="44" y="76" width="36" height="128" rx="10" fill="#34536B"/>
+<rect x="94" y="116" width="36" height="88" rx="10" fill="#34536B"/>
+<rect x="144" y="156" width="36" height="48" rx="10" fill="#34536B"/>
+<circle cx="190" cy="82" r="30" fill="#E9A23B"/>
+<rect x="36" y="210" width="184" height="10" rx="5" fill="#34536B" opacity="0.45"/>
+</svg>

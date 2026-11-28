@@ -65,6 +65,9 @@ An app theme is designed for one app at a time, when that app needs a look of it
 | `icons/<app>/` | One folder per app: `icon.svg` (the source), `png/` sizes 16 to 1024, and `icon.ico`. The app's repository keeps a copy. |
 | `icons/tsukiakari/` | Moon on water. Also one variant per weekday theme, and the three concepts that were not chosen. Its SVGs are made by `tools/build.py`. |
 | `icons/shiwake/` | Three slips sorted into steps, with a red seal, on kraft paper. Drawn by hand. |
+| `icons/kinko/` | KINKO (金庫): a koban, the oval gold coin, with a keyhole, on dark indigo. Drawn by hand. |
+| `icons/kura/` | Kura (蔵): a white-plaster storehouse with a black roof and namako tiles; its door is a play button. Drawn by hand. |
+| `icons/clear/` | CLEAR: three bars going down, and the sun coming out where they end. Drawn by hand. |
 | `tools/build.py` | Checks the themes and writes the CSS, the previews and the Tsukiakari icon SVGs. |
 | `tools/render_icons.py` | Makes the PNG files and the `.ico` from each `icons/<app>/icon.svg`, or one app's (needs PyQt6). |
 
